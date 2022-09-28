@@ -1,4 +1,3 @@
-from re import L
 from pandas import concat, read_excel, ExcelWriter, to_datetime, DataFrame
 from fuzzywuzzy import process, fuzz
 from tqdm import tqdm
@@ -26,5 +25,5 @@ td.insert(8, "Transaction date v2", col_tdate)
 td.insert(0, "_IS_EXIST", col_exist)
 td.insert(2, "_GAS_REF", col_gasref)
 
-with ExcelWriter("StoreRefrigerantOutput.xlsx") as writer:
+with ExcelWriter("output.xlsx") as writer:
     td.to_excel(writer, sheet_name="Store Refrigerant")
